@@ -1,2 +1,3 @@
-			# Henry
-	# Proyecto Individual - Machine Learning Operations 
+# Henry
+# Proyecto Individual - Machine Learning Operations 
+Mi nombre es Federico Molina, tengo 37 años, soy estudiante de Data Science en la academia Henry (por ahora ;)). Para ser mas preciso, tambien soy un ingeniero industrial de 25 años de Córdoba, Argentina. Mi pasión por la innovación y la exploración me ha llevado al emocionante mundo de la ciencia de datos. Combino habilidades técnicas y visión práctica para descubrir ideas transformadoras. Tengo experiencia en higiene y seguridad en la industria química, lo cual me brinda un sólido entendimiento de los aspectos prácticos y la importancia de mantener entornos seguros.
