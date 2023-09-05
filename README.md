@@ -2,7 +2,7 @@
 ### Proyecto Individual - Machine Learning Operations 
 Mi nombre es Federico Molina, tengo 37 años, soy estudiante de Data Science en la Henry. También estudio Licenciatura en Ciencias de la Computación y de la Información y tengo el título de Técnico en Gastronomía y su Gerenciamiento. Vivo en San Juan, Argentina. Tengo un hijo de 5 años, que es mi compañero de muchas horas de estudio, de este apasionante mundo de la Computación, específicamente de mi nueva pasión que es la Ciencia de Datos.
 ##Primera Parte
-- Data Engineering: debíamos asumir el rol de un Data Engineer. Se nos daba tres bases de datos de videojuegos de Steam en formato .gzip y debíamos llevar a cabo ciertas transformaciones para luego poder realizar algunas consultas a modo de prueba. Luego, procedemos a cargar los datos donde corresponda."
+- Data Engineering: debíamos asumir el rol de un Data Engineer. Se nos daba tres bases de datos de videojuegos de Steam en formato .gzip y debíamos llevar a cabo ciertas transformaciones para luego poder realizar algunas consultas a modo de prueba. Luego, procedemos a cargar los datos donde corresponda.
 - Feature Engineering: en el dataset de reseñas debíamos crear una columna aplicando análisis de sentimiento con Procesamiento de Lenguaje Natural.
 - Desarrollo API: teníamos que disponibilizar los datos de la empresa usando el framework FastAPI, creando 6 funciones consumibles en una API para que puedan ser consultadas.
 
