@@ -140,11 +140,11 @@ def developer(desarrollador: str):
 #6
 @app.get('/sentiment_analysis/{año}')
 def sentiment_analysis(año: int):
-"""
-Esta función toma como parámetro valores analizados por análisis de sentimiento, 
-y según el año de lanzamiento, devuelve una lista con la cantidad de registros de reseñas 
-de usuarios que se encuentren categorizados con un análisis de sentimiento.
-"""
+    """
+    Esta función toma como parámetro valores analizados por análisis de sentimiento, 
+    y según el año de lanzamiento, devuelve una lista con la cantidad de registros de reseñas 
+    de usuarios que se encuentren categorizados con un análisis de sentimiento.
+    """
     
     # Filtrar el dataframe de juegos por el año especificado
     juegos_del_año = games_df[games_df['release_year'] == año]
