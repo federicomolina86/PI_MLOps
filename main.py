@@ -12,16 +12,18 @@ games_df=pd.read_csv('games_ultimo.csv')
 #1
 @app.get('/userdata/{user_id}')
 def userdata(user_id: str):
+    """
+    Esta función recibe como parámetro el id de un usuario de Steam y luego
+    calcula la cantidad de dinero gastado por el usuario, el porcentaje de 
+    recomendaciones y la cantidad de items comprados por el mismo.
+    """
     # Filtrar los items comprados por el usuario
     user_items = items_df[['user_id'] == user_id]
-
-    # Calcular la cantidad de dinero gastado por el usuario
+    
     user_spent_money = (user_items['items_count'] * games_df[items_df['user_id']]['price']).sum()
 
-    # Calcular el porcentaje de recomendaciones
     recommend_percentage = (reviews_df[items_df['user_id'] == user_id]['recommend'].mean()) * 100
-
-    # Obtener la cantidad de items
+ 
     total_items_count = items_df['items_count'].sum()
 
     return user_spent_money, recommend_percentage, total_items_count
@@ -29,20 +31,20 @@ def userdata(user_id: str):
 #2
 @app.get('/countreviews/{start_date, end_date}')
 def countreviews(start_date, end_date: str):
+    """
+    Esta función toma como parámetro dos fechas, y cuenta la cantidad de usuarios que realizaron
+    reseñas dentro del rango de fechas dado y calcula el porcentaje de recomendación
+    """
     # Convertir las fechas de entrada en objetos datetime
     start_date = datetime.strptime(start_date, '%Y-%m-%d')
     end_date = datetime.strptime(end_date, '%Y-%m-%d')
 
-    
-    # Filtrar las reseñas dentro del rango de fechas dado
     filtered_reviews = [review for review in reviews_df if start_date <= review['date'] <= end_date]
     
-    # Contar la cantidad de usuarios que realizaron reseñas
     users = set()
     for review in filtered_reviews:
         users.add(review['user_id'])
     
-    # Calcular el porcentaje de recomendación
     total_reviews = len(filtered_reviews)
     if total_reviews > 0:
         recommend_reviews = sum(1 for review in filtered_reviews if review['recommend'] == True)
@@ -55,6 +57,8 @@ def countreviews(start_date, end_date: str):
 #3
 @app.get('/genre/{genero}')
 def genre(genero: str):
+    """
+    """
     # Verificar que el género esté en el DataFrame
     if genero not in games_df.columns:
         return "Género no encontrado en el DataFrame games_df"
