@@ -58,6 +58,8 @@ def countreviews(start_date, end_date: str):
 @app.get('/genre/{genero}')
 def genre(genero: str):
     """
+    Esta función toma como parámetro un género de juegos y devuelve el puesto en el que 
+    se encuentra sobre el ranking de los mismos analizado bajo la columna playtime_forever.
     """
     # Verificar que el género esté en el DataFrame
     if genero not in games_df.columns:
@@ -80,6 +82,10 @@ def genre(genero: str):
 #4
 @app.get('/userforgenre/{genero}')
 def userforgenre(genero: str):
+    """
+    Esta función toma como parámetro un tipo de género de juegos, y muestra el top 5 de usuarios
+    con más horas de juego en el género dado, con su respectivo URL y su id.
+    """
     # Filtrar juegos del género dado
     genero_column = games_df[genero] == 1
     juegos_del_genero = games_df[genero_column]['title']
@@ -101,6 +107,10 @@ def userforgenre(genero: str):
 #5
 @app.get('/developer/{desarrollador}')
 def developer(desarrollador: str):
+    """
+    Esta función toma como parámetro un desarrollador de videojuegos, devuelve la
+    cantidad de juegoss y porcentaje de contenido Free por año según la empresa.
+    """
     # Filtrar el DataFrame para obtener solo las filas del desarrollador dado y precio Free
     filtered_df = games_df[(games_df['developer'] == desarrollador) & (games_df['price'] == 0.0)]
     
@@ -130,6 +140,12 @@ def developer(desarrollador: str):
 #6
 @app.get('/sentiment_analysis/{año}')
 def sentiment_analysis(año: int):
+"""
+Esta función toma como parámetro valores analizados por análisis de sentimiento, 
+y según el año de lanzamiento, devuelve una lista con la cantidad de registros de reseñas 
+de usuarios que se encuentren categorizados con un análisis de sentimiento.
+"""
+    
     # Filtrar el dataframe de juegos por el año especificado
     juegos_del_año = games_df[games_df['release_year'] == año]
 
@@ -150,6 +166,10 @@ def sentiment_analysis(año: int):
 #Función de recomendación
 @app.get('/recommend_games/{game_id}')
 def recommend_games(game_id):
+    """
+    Esta función toma como parámetro un id de juegos y a través de un modelo
+    de recomendación, devuelve 5 juegos similares
+    """
     # Encontrar el ID del juego en base al título
     game_title = games_df[games_df['id'] == game_id]['title'].values[0]
 
