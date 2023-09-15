@@ -14,7 +14,7 @@
 
 ## Contenido del Repositorio
   - Notebook del ETL-EDA y otro del Modelo de ML dentro de la carpeta'ETL-EDA-ML'.
-  - Los 3 datasets con sus respectivas transformaciones en formato 'csv'.
+  - Los 3 datasets con sus respectivas transformaciones en formato 'csv' y 'parquet'.
   - Archivo 'main.py', que incluye las 6 funciones a disponibilizar en la API, cada una con su correspondiente decorador.
   - Archivo '.gitignore' y 'requirements.txt', que incluye todas las librerías utilizadas.
   - README.md
