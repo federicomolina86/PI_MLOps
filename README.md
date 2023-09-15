@@ -1,12 +1,21 @@
-## Henry
-### Proyecto Individual - Machine Learning Operations 
-Mi nombre es Federico Molina, tengo 37 años, soy estudiante de Data Science en la Henry. También estudio Licenciatura en Ciencias de la Computación y de la Información y tengo el título de Técnico en Gastronomía y su Gerenciamiento. Vivo en San Juan, Argentina. Tengo un hijo de 5 años, que es mi compañero de muchas horas de estudio, de este apasionante mundo de la Computación, específicamente de mi nueva pasión que es la Ciencia de Datos.
+# Proyecto Individual - Machine Learning Operations Engineer
+  Mi nombre es Federico Molina, soy Data Scientist y este es mi primer proyecto de Ciencias de Datos. Steam, la plataforma multinacional de videojuegos, necesita crear un sistema de recomendación de videojuegos para usuarios.
+
+![](https://github.com/federicomolina86/Proyecto-MLOps-Engineer/blob/main/src/Steam_logo.jpg)
+
 ## Primera Parte
-- Data Engineering: debíamos asumir el rol de un Data Engineer. Se nos daba tres bases de datos de videojuegos de Steam en formato .gzip y debíamos llevar a cabo ciertas transformaciones para luego poder realizar algunas consultas a modo de prueba. Luego, procedemos a cargar los datos donde corresponda.
-- Feature Engineering: en el dataset de reseñas debíamos crear una columna aplicando análisis de sentimiento con Procesamiento de Lenguaje Natural.
-- Desarrollo API: teníamos que disponibilizar los datos de la empresa usando el framework FastAPI, creando 6 funciones consumibles en una API para que puedan ser consultadas.
+- Data Engineering (proceso de ETL): a partir de tres bases de datos sobre los juegos, sus reseñas y características, y luego de la carga de las mismas, realicé ciertas transformaciones para dejarlas en condiciones óptimas, sin faltantes de datos ni columnas innecesarias. Todo este proceso lo realicé usando el lenguaje `Python` y la librería `Pandas`. 
+- Feature Engineering: en el dataset de reseñas cree una columna aplicando análisis de sentimiento con Procesamiento de Lenguaje Natural (NLP) usando la librería `NLTK`. El proceso dejaba como resultado los valores "2" para reseñas positivas, "0" para negativas y "1" para las neutrales o inexistentes.
+- Desarrollo API: luego disponibilicé los datos de la empresa usando el framework `FastAPI`, creando 6 funciones consumibles en una API para que puedan ser consultadas. Estas funciones fueron solicitadas por la misma empresa.
 
 ## Segunda Parte
-- Análisis exploratorio de los datos (EDA): es momento de analizar las relaciones que hay entre las variables del dataset, y ver si hay algún patrón interesante que valga la pena explorar en un análisis posterior.
-- Modelo de aprendizaje automático: armar un sistema de recomendación. Hay dos propuestas de trabajo: en la primera, el modelo deberá tener una relación ítem-ítem, esto es se toma un item, en base a que tan similar sea ese ítem al resto, se recomiendan otros. Aquí el input es un juego y el output es una lista de juegos recomendados. La otra propuesta para el sistema de recomendación debe aplicar el filtro user-item, esto es tomar un usuario, se encuentran usuarios similares y se recomiendan ítems que a esos usuarios similares les gustaron.
-Yo elegí la primera propuesta, así que debo crear una función que, ingresando un id de producto, se debe recibir una lista con 5 juegos recomendados similares al ingresado.
+- Análisis exploratorio de los datos (EDA): en esta parte analicé las relaciones que habían entre las variables de los dataset, y busqué patrones interesantes que valieran la pena explorar.
+- Modelo de aprendizaje automático: armé un sistema de recomendación con la librería `Scikit-Learn`, usando una relación ítem-ítem (en base a que tan similar sea ese ítem al resto, se recomiendan otros). El input es un juego y el output es una lista de juegos recomendados. Luego añadí este modelo a la API para que también pueda ser consultado.
+
+## Contenido del Repositorio
+  - Notebook del ETL-EDA y otro del Modelo de ML dentro de la carpeta'ETL-EDA-ML'.
+  - Los 3 datasets con sus respectivas transformaciones en formato 'csv'.
+  - Archivo 'main.py', que incluye las 6 funciones a disponibilizar en la API, cada una con su correspondiente decorador.
+  - Archivo '.gitignore' y 'requirements.txt', que incluye todas las librerías utilizadas.
+  - README.md
+  - Carpeta 'src' que incluye las imágenes del README.
